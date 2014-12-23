@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" xmlns:android="http://schemas.android.com/apk/res/android"
+        android:background="#fff">
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/editTextInput" android:layout_alignParentTop="true"
+            android:layout_marginTop="60dp"
+            android:textColor="#000" android:inputType="text"
+            android:singleLine="true"
+            android:layout_toLeftOf="@+id/button" android:layout_alignParentLeft="true"/>
+        <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ok Go"
+                android:id="@+id/button"
+                android:onClick="onSearchClick"
+                android:layout_alignTop="@+id/editTextInput" android:layout_alignParentRight="true"/>
+        <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/test"
+                android:layout_below="@+id/editTextInput" android:layout_alignLeft="@+id/editTextInput"
+                android:layout_marginTop="21dp" android:layout_alignRight="@+id/button" android:typeface="monospace"
+                android:textSize="12dp"/>
+</RelativeLayout>
+

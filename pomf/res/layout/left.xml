@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+        xmlns:tools="http://schemas.android.com/tools" android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" xmlns:android="http://schemas.android.com/apk/res/android"
+        android:background="@drawable/background" android:weightSum="1" tools:context=".RightActivity">
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/title"
+                android:id="@+id/activityTitle" android:layout_margin="10dp" android:gravity="center|center_horizontal"
+                android:textColor="#ffbdbdbd" android:textStyle="normal|italic" android:textSize="14dp"/>
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Left random"
+                android:id="@+id/randLabel" android:textSize="52dp" android:textStyle="normal"
+                android:gravity="center_horizontal" android:layout_marginTop="50dp" android:textColor="#ffbdbdbd"/>
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="000"
+                android:id="@+id/tvView" android:layout_marginTop="5dp" android:textStyle="bold"
+                android:textSize="58dp" android:gravity="center_horizontal" android:textColor="#ffff0000"/>
+        <Space
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal" android:layout_weight="1"/>
+        <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/SlideToMain" android:layout_gravity="bottom|right"
+                android:background="@drawable/arrowright" android:onClick="onClickMain"/>
+</LinearLayout>

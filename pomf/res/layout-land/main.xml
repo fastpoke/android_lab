@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+        xmlns:tools="http://schemas.android.com/tools" android:layout_width="fill_parent"
+        android:layout_height="fill_parent" xmlns:android="http://schemas.android.com/apk/res/android"
+        tools:context=".MyActivity">
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView"
+                android:src="@drawable/background" android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true" android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true" android:background="#ffffffff"/>
+        <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/SlideToLeft"
+                android:src="@drawable/arrowleft" android:background="#00ffffff"
+                android:onClick="onClickLeft"
+                android:layout_alignParentBottom="true" android:layout_alignParentLeft="true"
+                android:layout_marginLeft="5dp"/>
+        <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/about" android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true" android:src="@drawable/github"
+                android:background="#00ffffff"
+                android:onClick="onClickAbout"
+                />
+        <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/SlideToRight"
+                android:src="@drawable/arrowright" android:background="#00ffffff"
+                android:onClick="onClickRight" android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="5dp"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/title"
+                android:id="@+id/TextView"
+                android:textColor="#ffbdbdbd"
+                android:layout_alignParentTop="true" android:layout_centerHorizontal="true"
+                android:textStyle="italic" android:textSize="14dp" android:padding="10dp"/>
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" android:layout_below="@+id/TextView"
+                android:layout_alignLeft="@+id/SlideToLeft" android:layout_alignParentRight="true"
+                android:layout_above="@+id/SlideToLeft">
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                          android:text="@string/Row2" android:id="@+id/textView" android:background="#ffe1e1e1"
+                          android:padding="5dp" android:layout_margin="3dp" android:textSize="14dp"
+                          android:textColor="#ff000000" android:textIsSelectable="true"/>
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                          android:text="@string/Row4" android:id="@+id/textView2" android:background="#ffe1e1e1"
+                          android:padding="5dp" android:layout_margin="3dp" android:textSize="14dp"
+                          android:textColor="#ff000000" android:textIsSelectable="true"/>
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                          android:text="@string/Row5" android:id="@+id/textView3" android:background="#ffe1e1e1"
+                          android:padding="5dp" android:layout_margin="3dp" android:textSize="14dp"
+                          android:textColor="#ff000000" android:textIsSelectable="true"/>
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                          android:text="source from http://news.nyan.me/" android:id="@+id/textView4"
+                          android:layout_margin="3dp" android:phoneNumber="false" android:linksClickable="true"
+                          android:textColorLink="@android:color/holo_blue_dark" android:textIsSelectable="true"
+                          android:textColor="#ffbdbdbd" android:textStyle="italic" android:gravity="right"
+                          android:paddingRight="5dp"/>
+        </LinearLayout>
+</RelativeLayout>

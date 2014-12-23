@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+        xmlns:tools="http://schemas.android.com/tools" android:layout_width="fill_parent"
+        android:layout_height="fill_parent" xmlns:android="http://schemas.android.com/apk/res/android"
+        tools:context=".MyActivity" style="@android:style/Theme.DeviceDefault.Light.NoActionBar">
+    <TabHost
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" android:id="@+id/tabHost" android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true" android:theme="@android:style/Theme.Light.NoTitleBar">
+
+        <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="vertical">
+            <TabWidget
+                    android:id="@android:id/tabs"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+            </TabWidget>
+            <ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent"
+                    >
+                <FrameLayout
+                        android:id="@android:id/tabcontent"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent">
+
+                    <RelativeLayout
+                            android:id="@+id/tab1"
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:orientation="vertical"
+                            >
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Kernel Version"
+                                android:id="@+id/versionTitle" android:layout_alignParentRight="true"
+                                android:layout_alignParentLeft="true" android:textStyle="bold" android:gravity="center"
+                                android:layout_marginTop="10dp" android:layout_marginBottom="10dp" android:textSize="18dp"
+                                />
+                        <TextView
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:text="version"
+                                android:id="@+id/version" android:typeface="normal" android:paddingBottom="15dp"
+                                android:layout_below="@+id/versionTitle" android:layout_alignParentLeft="true"
+                                android:layout_marginLeft="5dp"
+                                />
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="1dp"
+                                android:id="@+id/line"
+                                android:layout_alignParentLeft="true" android:layout_below="@+id/version"
+                                android:layout_alignParentRight="true"
+                                android:background="#FF32B7E7"
+                                android:layout_marginBottom="5dp"
+                                />
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="CPU Information"
+                                android:id="@+id/cpuTitle"
+                                android:layout_alignParentLeft="true" android:layout_below="@+id/line"
+                                android:layout_marginTop="10dp" android:layout_marginBottom="10dp"
+                                android:layout_alignParentRight="true" android:textStyle="bold" android:gravity="center"
+                                android:textSize="18dp"/>
+                        <TextView android:id="@+id/cpuinfo" android:layout_width="fill_parent" android:layout_height="wrap_content"
+                                  android:typeface="normal" android:text="cpuinfo"
+                                  android:layout_below="@+id/cpuTitle" android:layout_alignParentLeft="true"
+                                  android:layout_marginLeft="5dp"
+                                />
+                    </RelativeLayout>
+                    <RelativeLayout
+                            android:id="@+id/tab2"
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            >
+                        <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent" xmlns:android="http://schemas.android.com/apk/res/android"
+                                android:weightSum="1">
+                            <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                            android:layout_alignParentBottom="true" android:layout_alignParentLeft="true"
+                                            android:id="@+id/MobileLayout"
+                                    >
+                                <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Mobile Network"
+                                        android:id="@+id/MobileTitle" android:layout_alignParentTop="true"
+                                        android:layout_alignParentRight="true" android:layout_alignParentLeft="true"
+                                        android:layout_marginTop="10dp" android:layout_marginBottom="10dp" android:gravity="center"
+                                        android:textSize="18dp" android:textStyle="bold" android:typeface="sans"
+                                        />
+                                <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Network state:"
+                                        android:id="@+id/MobileState" android:layout_below="@+id/MobileTitle"
+                                        android:layout_alignParentLeft="true" android:layout_alignRight="@+id/MobileAvailable"
+                                        android:layout_marginLeft="5dp"
+                                        />
+                                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Network available:"
+                                          android:id="@+id/MobileAvailable"
+                                          android:layout_below="@+id/MobileState" android:layout_alignParentLeft="true"
+                                          android:layout_alignRight="@+id/MobileType" android:layout_marginLeft="5dp"
+                                        />
+                                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Network type:"
+                                          android:id="@+id/MobileType"
+                                          android:layout_below="@+id/MobileAvailable" android:layout_alignParentLeft="true"
+                                          android:layout_alignRight="@+id/MobileConnection" android:layout_marginLeft="5dp"
+                                        />
+                                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Network connection:"
+                                          android:id="@+id/MobileConnection"
+                                          android:layout_below="@+id/MobileType" android:layout_alignParentLeft="true"
+                                          android:layout_marginLeft="5dp"
+                                        />
+                                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Connection status:"
+                                          android:id="@+id/MobileStatus"
+                                          android:layout_below="@+id/MobileConnection" android:layout_alignParentLeft="true"
+                                          android:layout_alignRight="@+id/MobileConnection" android:layout_marginLeft="5dp"
+                                        />
+                                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="value"
+                                          android:id="@+id/MobileStateValue"
+                                          android:layout_below="@+id/MobileTitle" android:layout_toRightOf="@+id/MobileState"
+                                          android:layout_marginLeft="10dp"
+                                        />
+                                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                          android:text="value" android:id="@+id/MobileAvailableValue"
+                                          android:layout_below="@+id/MobileState" android:layout_toRightOf="@+id/MobileState"
+                                          android:layout_marginLeft="10dp"
+                                        />
+                                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="value"
+                                          android:id="@+id/MobileTypeValue"
+                                          android:layout_below="@+id/MobileAvailable" android:layout_toRightOf="@+id/MobileType"
+                                          android:layout_marginLeft="10dp"
+                                        />
+                                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                          android:text="value" android:id="@+id/MobileConnectionValue"
+                                          android:layout_below="@+id/MobileType" android:layout_toRightOf="@+id/MobileConnection"
+                                          android:layout_marginLeft="10dp"
+                                        />
+                                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                          android:text="value" android:id="@+id/MobileStatusValue"
+                                          android:layout_below="@+id/MobileConnection" android:layout_toRightOf="@+id/MobileStatus"
+                                          android:layout_marginLeft="10dp"
+                                        />
+                            </RelativeLayout>
+                            <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"
+                                    android:id="@+id/textView43"
+                                    android:background="#FF32B7E7" android:layout_marginTop="10dp"
+                                    android:layout_marginBottom="5dp"
+                                    />
+                            <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content" android:id="@+id/WirelessLayout"
+                                    >
+                                <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Wireless Network"
+                                        android:id="@+id/WirelessTitle" android:layout_alignParentTop="true"
+                                        android:layout_alignParentLeft="true" android:layout_alignParentRight="true"
+                                        android:gravity="center" android:layout_marginTop="10dp" android:layout_marginBottom="10dp"
+                                        android:textSize="18dp" android:textStyle="bold" android:typeface="sans"
+                                        />
+                                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Network state:"
+                                          android:id="@+id/WirelessState"
+                                          android:layout_below="@+id/WirelessTitle" android:layout_alignParentLeft="true"
+                                          android:layout_alignRight="@+id/WirelessAvailable" android:layout_marginLeft="5dp"
+                                        />
+                                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Network available:"
+                                          android:id="@+id/WirelessAvailable"
+                                          android:layout_below="@+id/WirelessState" android:layout_alignParentLeft="true"
+                                          android:layout_alignRight="@+id/WirelessConnection" android:layout_marginLeft="5dp"
+                                        />
+                                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Network connection:"
+                                          android:id="@+id/WirelessConnection"
+                                          android:layout_below="@+id/WirelessAvailable" android:layout_alignParentLeft="true"
+                                          android:layout_marginLeft="5dp"
+                                        />
+                                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="ConnectionStatus:"
+                                          android:id="@+id/WirelessStatus"
+                                          android:layout_below="@+id/WirelessConnection" android:layout_alignParentLeft="true"
+                                          android:layout_alignRight="@+id/WirelessConnection" android:layout_marginLeft="5dp"
+                                        />
+                                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="SSID:"
+                                          android:id="@+id/WirelessSSID"
+                                          android:layout_below="@+id/WirelessStatus"
+                                          android:layout_alignParentLeft="true" android:layout_alignRight="@+id/WirelessStatus"
+                                          android:layout_marginLeft="5dp"
+                                        />
+                                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="IP:"
+                                          android:id="@+id/WirelessIP"
+                                          android:layout_below="@+id/WirelessSSID" android:layout_alignParentLeft="true"
+                                          android:layout_alignRight="@+id/WirelessSSID" android:layout_marginLeft="5dp"
+                                        />
+                                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="MAC:"
+                                          android:id="@+id/WirelessMAC"
+                                          android:layout_below="@+id/WirelessIP" android:layout_alignParentLeft="true"
+                                          android:layout_alignRight="@+id/WirelessIP" android:layout_marginLeft="5dp"
+                                        />
+                                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Link speed:"
+                                          android:id="@+id/WirelessSpeed"
+                                          android:layout_below="@+id/WirelessMAC" android:layout_alignParentLeft="true"
+                                          android:layout_alignRight="@+id/WirelessMAC" android:layout_marginLeft="5dp"
+                                        />
+                                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Gateway:"
+                                          android:id="@+id/WIrelessGateway"
+                                          android:layout_below="@+id/WirelessSpeed" android:layout_alignParentLeft="true"
+                                          android:layout_alignRight="@+id/WirelessSpeed" android:layout_marginLeft="5dp"
+                                        />
+                                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="value"
+                                          android:id="@+id/WirelessStateValue"
+                                          android:layout_below="@+id/WirelessTitle" android:layout_toRightOf="@+id/WirelessState"
+                                          android:layout_marginLeft="10dp" android:layout_alignRight="@+id/WirelessAvailableValue"
+                                        />
+                                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                          android:text="value" android:id="@+id/WirelessAvailableValue"
+                                          android:layout_below="@+id/WirelessStateValue" android:layout_toRightOf="@+id/WirelessState"
+                                          android:layout_marginLeft="10dp" android:layout_alignRight="@+id/WirelessConnectionValue"
+                                        />
+                                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                          android:text="value" android:id="@+id/WirelessConnectionValue"
+                                          android:layout_below="@+id/WirelessAvailableValue" android:layout_toRightOf="@+id/WirelessAvailable"
+                                          android:layout_marginLeft="10dp" android:layout_alignRight="@+id/WirelessStatusValue"
+                                        />
+                                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                          android:text="value" android:id="@+id/WirelessStatusValue"
+                                          android:layout_below="@+id/WirelessConnection"
+                                          android:layout_alignRight="@+id/WirelessSSIDValue" android:layout_alignLeft="@+id/WirelessSSIDValue"
+                                        />
+                                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="value"
+                                          android:id="@+id/WirelessSSIDValue"
+                                          android:layout_below="@+id/WirelessStatus" android:layout_toRightOf="@+id/WirelessSSID"
+                                          android:layout_marginLeft="10dp" android:layout_alignRight="@+id/WirelessIPValue"
+                                        />
+                                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="value"
+                                          android:id="@+id/WirelessIPValue"
+                                          android:layout_below="@+id/WirelessSSIDValue" android:layout_toRightOf="@+id/WirelessSSID"
+                                          android:layout_marginLeft="10dp" android:layout_alignParentRight="true"
+                                        />
+                                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="value"
+                                          android:id="@+id/WirelessMACValue"
+                                          android:layout_below="@+id/WirelessIPValue"
+                                          android:layout_alignParentRight="true" android:layout_alignLeft="@+id/WirelessIPValue"
+                                        />
+                                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="value"
+                                          android:id="@+id/WirelessSpeedValue"
+                                          android:layout_below="@+id/WirelessMAC" android:layout_toRightOf="@+id/WirelessMAC"
+                                          android:layout_marginLeft="10dp" android:layout_alignRight="@+id/WirelessMACValue"
+                                        />
+                                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="value"
+                                          android:id="@+id/WIrelessGatewayValue"
+                                          android:layout_below="@+id/WirelessSpeed" android:layout_toRightOf="@+id/WIrelessGateway"
+                                          android:layout_marginLeft="10dp" android:layout_alignRight="@+id/WirelessSpeedValue"
+                                        />
+                            </RelativeLayout>
+                            <Button
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Refresh"
+                                    android:id="@+id/button" android:layout_gravity="center_horizontal" android:onClick="reload"
+                                    android:layout_alignParentBottom="true" android:layout_centerHorizontal="true"
+                                    />
+                        </LinearLayout>
+                    </RelativeLayout>
+                    <RelativeLayout
+                            android:id="@+id/tab3"
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent" xmlns:android="http://schemas.android.com/apk/res/android"
+                            >
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="uptimeValue"
+                                android:id="@+id/uptime"
+                                android:textSize="18dp" android:textStyle="bold" android:layout_below="@+id/uptimeTitle" android:layout_centerHorizontal="true"
+                                android:layout_marginTop="10dp"
+                                />
+                    </RelativeLayout>
+                </FrameLayout>
+            </ScrollView>
+        </LinearLayout>
+    </TabHost>
+</RelativeLayout>

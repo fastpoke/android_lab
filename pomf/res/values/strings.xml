@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Pomf~</string>
+    <string name="left.class"/>
+    <string name="left.java"><![CDATA[<]]></string>
+    <string name="right.class"/>
+    <string name="right.java"><![CDATA[>]]></string>
+    <string name="MainActivity.java"><![CDATA[>]]></string>
+    <string name="title">For the Glory of Satan of course</string>
+    <string name="Row1">» Житель Хабаровска призвал погладить кота ради спасения безногих котиков</string>
+    <string name="Row2">» Несколько котиков устроили ледовое побоище в госнаркоконтроле</string>
+    <string name="Row3">» В Петрозаводске связали шапочки, иллюстрирующие преждевременное слабоумие</string>
+    <string name="Row4">» Детская военно-строительная бригада из Тель-Авива задержана при перевозке 500 кг христианских святынь</string>
+    <string name="Row5">» Министр культуры КНДР потребовал забыть слово «полиморфизм» к концу 2015 года</string>
+</resources>
