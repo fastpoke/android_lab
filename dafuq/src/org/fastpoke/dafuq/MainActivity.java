@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.*;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -21,10 +22,12 @@ import org.xmlpull.v1.XmlPullParserFactory;
 
 import java.io.*;
 
-public class MainActivity extends Activity  {
+public class MainActivity extends Activity {
 
-    private EditText editTextInput;
+    public EditText editTextInput;
+    public Button button;
     public EditText test;
+    public EditText test2;
     final String LOG_TAG = "myLogs";
 
     @Override
@@ -34,6 +37,7 @@ public class MainActivity extends Activity  {
 
         editTextInput = (EditText) findViewById(R.id.editTextInput);
         test = (EditText) findViewById(R.id.test);
+        test2 = (EditText) findViewById(R.id.test2);
         setContentView(R.layout.main);
     }
 
@@ -42,21 +46,33 @@ public class MainActivity extends Activity  {
     public void onSearchClick(View button) throws IOException {
         try {
             //TODO fix getText
-            String url = "http://google.com/complete/search?output=toolbar&q=derp";// + editTextInput.getText().toString();
-            new HttpAsyncTask().execute(url);
+//            String url = "http://google.com/complete/search?output=toolbar&q=derp";
+            button.setOnClickListener(
+                    new View.OnClickListener() {
+                        public void onClick(View view) {
+                            try {
+                                System.out.println(editTextInput.getText().toString());
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    }
+            );
+
+            new HttpAsyncTask().execute("http://google.com/complete/search?output=toolbar&q=derp");
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    public String GET(String url){
+    public String GET(String url) {
         InputStream inputStream;
         String result = "";
         try {
             HttpClient httpclient = new DefaultHttpClient();
             HttpResponse httpResponse = httpclient.execute(new HttpGet(url));
             inputStream = httpResponse.getEntity().getContent();
-            if(inputStream != null)
+            if (inputStream != null)
                 result = convertInputStreamToString(inputStream);
             else
                 result = "Did not work";
@@ -66,11 +82,11 @@ public class MainActivity extends Activity  {
         return result;
     }
 
-    public String convertInputStreamToString(InputStream inputStream) throws IOException{
-        BufferedReader bufferedReader = new BufferedReader( new InputStreamReader(inputStream));
+    public String convertInputStreamToString(InputStream inputStream) throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
         String line = "";
         String result = "";
-        while((line = bufferedReader.readLine()) != null) {
+        while ((line = bufferedReader.readLine()) != null) {
             result += line;
         }
         inputStream.close();
@@ -155,8 +171,7 @@ public class MainActivity extends Activity  {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId())
-        {
+        switch (item.getItemId()) {
             case R.id.exit:
                 finish();
                 return true;
