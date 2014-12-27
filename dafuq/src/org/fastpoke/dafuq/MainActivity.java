@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
+import android.text.Editable;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.*;
@@ -24,10 +25,7 @@ import java.io.*;
 
 public class MainActivity extends Activity {
 
-    public EditText editTextInput;
-    public Button button;
     public EditText test;
-    public EditText test2;
     final String LOG_TAG = "myLogs";
 
     @Override
@@ -35,9 +33,6 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
 
-        editTextInput = (EditText) findViewById(R.id.editTextInput);
-        test = (EditText) findViewById(R.id.test);
-        test2 = (EditText) findViewById(R.id.test2);
         setContentView(R.layout.main);
     }
 
@@ -47,17 +42,10 @@ public class MainActivity extends Activity {
         try {
             //TODO fix getText
 //            String url = "http://google.com/complete/search?output=toolbar&q=derp";
-            button.setOnClickListener(
-                    new View.OnClickListener() {
-                        public void onClick(View view) {
-                            try {
-                                System.out.println(editTextInput.getText().toString());
-                            } catch (Exception e) {
-                                e.printStackTrace();
-                            }
-                        }
-                    }
-            );
+            EditText editTextInput = (EditText) findViewById(R.id.editTextInput);
+            Editable text = editTextInput.getText();
+            System.out.println(text);
+            System.out.println(text.toString());
 
             new HttpAsyncTask().execute("http://google.com/complete/search?output=toolbar&q=derp");
         } catch (Exception e) {
